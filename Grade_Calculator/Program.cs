@@ -12,32 +12,45 @@ namespace Grade_Calculator
         {
             Console.Write("Input Your Score: ");
             string Score = Console.ReadLine();
-            int SCORE = Convert.ToInt32(Score); //Converts User Input from String To Integer
-            if (SCORE == 0)
+            if (int.TryParse(Score, out int SCORE))
             {
-                Console.WriteLine("0 How? thats F- for sure :<"); // prints if Score is = to 0
-            } else if (SCORE <= 25 )
-            {
-                Console.WriteLine("F,Come on You can do better:( "); // prints if Score is < than 25
-            } else if (SCORE <= 35)
-            {
-                Console.WriteLine("D-, I mean Manageable :0"); // prints if Score is < than 35
-            } else if (SCORE <= 50)
-            {
-                Console.WriteLine("P, MID :|"); // prints if Score is < than 50
-            } else if (SCORE <= 75)
-            {
-                Console.WriteLine("B, Above Average :>"); // prints if Score is < than 75
-            } else if (SCORE <= 80)
-            {
-                Console.WriteLine ("A, Nice try you did great"); // prints if Score is < than 80
-            } else if (SCORE <= 100)
-            {
-                Console.WriteLine("Excellent A+ :)"); // prints if Score is < than 100
+                if (SCORE == 0)
+                {
+                    Console.WriteLine("0 How? thats F- for sure :<"); // prints if Score is = to 0
+                }
+                else if (SCORE <= 25)
+                {
+                    Console.WriteLine("F,Come on You can do better:( "); // prints if Score is < than 25
+                }
+                else if (SCORE <= 35)
+                {
+                    Console.WriteLine("D-, I mean Manageable :0"); // prints if Score is < than 35
+                }
+                else if (SCORE <= 50)
+                {
+                    Console.WriteLine("P, MID :|"); // prints if Score is < than 50
+                }
+                else if (SCORE <= 75)
+                {
+                    Console.WriteLine("B, Above Average :>"); // prints if Score is < than 75
+                }
+                else if (SCORE <= 80)
+                {
+                    Console.WriteLine("A, Nice try you did great"); // prints if Score is < than 80
+                }
+                else if (SCORE <= 100)
+                {
+                    Console.WriteLine("Excellent A+ :)"); // prints if Score is < than 100
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Score,Enter A number Between 0 and 100"); // prints if Score is not in the Range of 0 and 100
+                }
             } else
             {
-                Console.WriteLine("Invalid Score,Enter A number Between 0 and 100"); // prints if Score is not in the Range of 0 and 100
+                Console.WriteLine(Score + " is not an Actual Value, Please enter an Actual Score");
             }
+            
             
         }
     }
